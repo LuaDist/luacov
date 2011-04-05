@@ -1,0 +1,14 @@
+--- This file is part of LuaDist project
+
+name = "luacov"
+version = "0.2"
+
+desc = "LuaCov is a simple coverage analysis tool for Lua scripts."
+author = "Hisham Muhammad"
+license = "MIT/X11"
+url = "http://luacov.luaforge.net/"
+maintainer = "Peter Drahoš"
+
+depends = {
+	"lua >= 5.0"
+}
