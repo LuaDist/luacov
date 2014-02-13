@@ -1,0 +1,52 @@
+depends = {
+[[lua >= 5.0]],
+}
+
+maintainer = "Peter Drahoš"
+type = "x86_64"
+version = "0.2"
+name = "luacov"
+url = "http://luacov.luaforge.net/"
+files = {
+Data = {
+[[share/luacov/README.md]],
+}
+,
+Documentation = {
+[[share/luacov/doc//doc/files/src/luacov/defaults.html]],
+[[share/luacov/doc//doc/files/src/luacov/init.html]],
+[[share/luacov/doc//doc/files/src/luacov/reporter.html]],
+[[share/luacov/doc//doc/files/src/luacov/runner.html]],
+[[share/luacov/doc//doc/files/src/luacov/stats.html]],
+[[share/luacov/doc//doc/files/src/luacov/tick.html]],
+[[share/luacov/doc//doc/index.html]],
+[[share/luacov/doc//doc/luadoc.css]],
+[[share/luacov/doc//doc/modules/luacov.defaults.html]],
+[[share/luacov/doc//doc/modules/luacov.html]],
+[[share/luacov/doc//doc/modules/luacov.reporter.html]],
+[[share/luacov/doc//doc/modules/luacov.runner.html]],
+[[share/luacov/doc//doc/modules/luacov.stats.html]],
+[[share/luacov/doc//doc/modules/luacov.tick.html]],
+[[share/luacov/doc//doc.css]],
+[[share/luacov/doc//index.html]],
+[[share/luacov/doc//license.html]],
+[[share/luacov/doc//luacov.png]],
+}
+,
+Other = {
+[[share/luacov/etc/luacov]],
+}
+,
+Runtime = {
+[[lib/lua/luacov.lua]],
+[[lib/lua/luacov/stats.lua]],
+[[lib/lua/luacov/tick.lua]],
+[[bin/luacov]],
+}
+,
+}
+
+arch = "Darwin"
+license = "MIT/X11"
+author = "Hisham Muhammad"
+desc = "LuaCov is a simple coverage analysis tool for Lua scripts."
