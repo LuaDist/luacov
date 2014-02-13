@@ -26,7 +26,7 @@ div.Example {
 <div id="container">
     
 <div id="product">
-    <div id="product_logo"><a href="http://luacov.luaforge.net">
+    <div id="product_logo"><a href="http://keplerproject.github.com/luacov">
         <img alt="LuaCov logo" src="luacov.png" />
     </a></div>
     <div id="product_name"><big><strong>LuaCov</strong></big></div>
@@ -50,9 +50,10 @@ div.Example {
             <li> <a href="index.html#contact">Contact</a></li>
         </ul>
     </li>
-    <li><a href="http://luaforge.net/projects/luacov/">Project</a>
+    <li><a href="doc/index.html">Reference</a></li>
+    <li><a href="http://github.com/keplerproject/luacov">Project</a>
         <ul>
-            <li><a href="http://luaforge.net/scm/?group_id=290">CVS</a></li>
+            <li><a href="http://github.com/keplerproject/luacov">Git</a></li>
         </ul>
     </li>
     <li><a href="license.html">License</a></li>
@@ -81,9 +82,12 @@ LuaCov is free software and uses the same <a href="license.html">license</a> as 
 <h2><a name="download"></a>Download</h2>
 
 <p>
-LuaCov can be downloaded from its
-<a href="http://luaforge.net/projects/luacov/files/">LuaForge page</a>.
+LuaCov can be downloaded via LuaRocks:
 </p>
+
+<div class="Example">
+luarocks install luacov
+</div>
 
 <p>
 LuaCov is written in pure Lua and has no external dependencies.
@@ -107,13 +111,19 @@ your script, like this:
 lua -lluacov test.lua
 </div>
 
+or
+
+<div class="Example">
+lua -erequire('luacov.runner')('myconfigfilename') test.lua
+</div>
+
 <p>
 (Alternatively, you can add <tt>require("luacov")</tt> to the first line
 of your script.)
 </p>
 
 <p>
-Once the script is run, a file called <tt>lcov.stats.out</tt> is generated.
+Once the script is run, a file called <tt>luacov.stats.out</tt> is generated.
 If the file already exists, statistics are <i>added</i> to it. This is useful,
 for example, for making a series of runs with different input parameters in
 a test suite. To start the accounting from scratch, just delete the stats file.
@@ -121,8 +131,8 @@ a test suite. To start the accounting from scratch, just delete the stats file.
 
 <p>
 To generate a report, just run the <tt>luacov</tt> command-line script.
-It expects to find a file named <tt>lcov.stats.out</tt> in the current
-directory, and outputs a file named <tt>lcov.report.out</tt>.
+It expects to find a file named <tt>luacov.stats.out</tt> in the current
+directory, and outputs a file named <tt>luacov.report.out</tt>.
 </p>
 
 <p>This is an example output of the report file:</p>
@@ -163,7 +173,22 @@ just modify the first line of <tt>xavante_start.lua</tt> so it reads:
 <h2><a name="history"></a>History</h2>
 
 <dl>
-    <dt><strong>0.1</strong> [July 16, 2007]</dt>
+    <dt><strong><a href="http://keplerproject.github.com/luacov/downloads/luacov-0.3.tar.gz">0.3</a></strong> [October 9, 2012]</dt>
+    <dd>
+        <ul>
+            <li>Added configuration options and files</li>
+            <li>Summary in report</li>
+            <li>Improved handling of long strings and comments</li>
+            <li>Support for coroutines and os.exit()</li>
+        </ul>
+    </dd>
+    <dt><strong><a href="http://keplerproject.github.com/luacov/downloads/luacov-0.2.tar.gz">0.2</a></strong> [April 30, 2009]</dt>
+    <dd>
+        <ul>
+            <li>Ignore code loaded from strings.</li>
+        </ul>
+    </dd>
+    <dt><strong><a href="http://keplerproject.github.com/luacov/downloads/luacov-0.1.tar.gz">0.1</a></strong> [July 16, 2007]</dt>
     <dd>
         <ul>
             <li>Initial release.</li>
@@ -174,8 +199,10 @@ just modify the first line of <tt>xavante_start.lua</tt> so it reads:
 <h2><a name="credits"></a>Credits</h2>
 
 <p>
-LuaCov was designed and implemented by Hisham Muhammad as a tool for
-testing <a href="http://luarocks.luaforge.net">LuaRocks</a>.
+LuaCov was originally designed and implemented by Hisham Muhammad as
+a tool for testing <a href="http://luarocks.org">LuaRocks</a>. A number
+of people have improved it since: see the Git logs for the full list of
+contributors!
 </p>
 
 <h2><a name="contact"></a>Contact</h2>
