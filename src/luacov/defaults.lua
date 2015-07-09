@@ -14,30 +14,40 @@ return {
   -- filename to store report
   ["reportfile"] = "luacov.report.out",
 
+  -- luacov.stats file updating frequency.
+  -- The lower this value - the more frequenty results will be written out to luacov.stats
+  -- You may want to reduce this value for short lived scripts (to for example 2) to avoid losing coverage data.
+  ["savestepsize"] = 100,
+
   -- Run reporter on completion? (won't work for ticks)
   runreport = false,
 
   -- Delete stats file after reporting?
   deletestats = false,
+  
+  -- Process Lua code loaded from raw strings
+  -- (that is, when the 'source' field in the debug info
+  -- does not start with '@')
+  codefromstrings = false,
 
   -- Patterns for files to include when reporting
   -- all will be included if nothing is listed
   -- (exclude overrules include, do not include
-  -- the .lua extension)
+  -- the .lua extension, path separator is always '/')
   ["include"] = {
   },
 
   -- Patterns for files to exclude when reporting
   -- all will be included if nothing is listed
   -- (exclude overrules include, do not include
-  -- the .lua extension)
+  -- the .lua extension, path separator is always '/')
   ["exclude"] = {
     "luacov$",
-    "luacov%.reporter$",
-    "luacov%.defaults$",
-    "luacov%.runner$",
-    "luacov%.stats$",
-    "luacov%.tick$",
+    "luacov/reporter$",
+    "luacov/defaults$",
+    "luacov/runner$",
+    "luacov/stats$",
+    "luacov/tick$",
   },
 
 
