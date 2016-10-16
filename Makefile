@@ -1,9 +1,11 @@
 
 PACKAGE=luacov
-VERSION=0.3
+VERSION=0.9.1
 PREFIX=/usr/local
 BINDIR=$(PREFIX)/bin
-LUADIR=$(PREFIX)/share/lua/5.1/
+LUA=lua
+LUAVER=5.1
+LUADIR=$(PREFIX)/share/lua/$(LUAVER)
 
 install:
 	mkdir -p $(BINDIR)
@@ -18,6 +20,11 @@ dist:
 	rm -rf $(PACKAGE)-$(VERSION)
 	rm -f $(PACKAGE)-$(VERSION).tar.gz
 	mkdir -p $(PACKAGE)-$(VERSION)
-	cp -a bin src doc Makefile README.md luacov*rockspec $(PACKAGE)-$(VERSION)
+	cp -a bin src doc Makefile README.md rockspecs $(PACKAGE)-$(VERSION)
 	tar czvf $(PACKAGE)-$(VERSION).tar.gz $(PACKAGE)-$(VERSION)
 	rm -rf $(PACKAGE)-$(VERSION)
+
+test:
+	$(LUA) tests/linescanner.lua
+	$(LUA) tests/filefilter.lua
+	$(LUA) tests/cli.lua

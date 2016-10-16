@@ -1,8 +1,11 @@
 
 --- Load luacov using this if you want it to periodically 
 -- save the stats file. This is useful if your script is
--- a daemon (ie, does not properly terminate.)
+-- a daemon (i.e., does not properly terminate).
 -- @class module
 -- @name luacov.tick
-require("luacov")
+-- @see luacov.defaults.savestepsize
+local runner = require("luacov.runner")
+runner.tick = true
+runner.init()
 return {}
